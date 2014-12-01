@@ -39,7 +39,7 @@ public class BFSCrawler {
 		BFSCrawler bfsCrawler = new BFSCrawler();
 
 		LinkedList<String> queue = new LinkedList<>();
-		queue.add("http://ceng.gazi.edu.tr/~anil/");
+		queue.add("http://ceng.gazi.edu.tr/~ozdemir/");
 		bfsCrawler.bfsLogic(queue);
 
 	}
@@ -59,11 +59,15 @@ public class BFSCrawler {
 		while (!queue.isEmpty()) {
 			// Get and remove queue first element
 			String currUrl = queue.poll();
-			System.out.println("queue:" + used.size());
+			LOGGER.info("Parent: " + used.size());
+			// check if parentUrl exist in DB ignore getting its childs
+			if (OlxDAO.getInstance().isExist(currUrl, false)) {
+				continue;
+			}
 			try {
 				// Retrieve all links from url
 				Set<String> allLinksInPage = getAllLinksInPage(currUrl);
-				System.out.println("Child size:" + allLinksInPage.size());
+				LOGGER.info("Child: " + allLinksInPage.size());
 				// For every child url
 				for (String child : allLinksInPage) {
 					// Check for child being unique
@@ -77,7 +81,7 @@ public class BFSCrawler {
 						urlEntry.setChildUrl(child);
 						urlEntry.setParentUrl(currUrl);
 						try {
-							OlxDAO.getInstance().addMessage(urlEntry);
+							OlxDAO.getInstance().addIfNotExist(urlEntry);
 						} catch (Exception e) {
 							LOGGER.error("error with storing db", e);
 						}
@@ -150,9 +154,9 @@ public class BFSCrawler {
 			}
 
 			// Add '/' at the end if not exist
-//			if (!link.endsWith("/") && !StringUtils.isEmpty(link)) {
-//				link = link + "/";
-//			}
+			// if (!link.endsWith("/") && !StringUtils.isEmpty(link)) {
+			// link = link + "/";
+			// }
 
 			if (!StringUtils.isEmpty(link)) {
 				// Url is not empty, filter socials and add to set
