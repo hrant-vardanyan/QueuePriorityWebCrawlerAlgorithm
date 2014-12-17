@@ -1,0 +1,304 @@
+2014-12-17 14:09:03 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1
+2014-12-17 14:09:06 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-12-17 14:09:06 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-12-17 14:09:06 WARN  HibernatePersistence:58 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2014-12-17 14:09:06 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: urlEntry
+	...]
+2014-12-17 14:09:06 INFO  Version:54 - HHH000412: Hibernate Core {4.3.3.Final}
+2014-12-17 14:09:06 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2014-12-17 14:09:06 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2014-12-17 14:09:07 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-12-17 14:09:07 INFO  C3P0ConnectionProvider:133 - HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://127.0.0.1:3306/urlEntry
+2014-12-17 14:09:07 INFO  C3P0ConnectionProvider:134 - HHH000046: Connection properties: {user=root, password=****}
+2014-12-17 14:09:07 INFO  C3P0ConnectionProvider:137 - HHH000006: Autocommit mode: false
+2014-12-17 14:09:07 INFO  MLog:92 - MLog clients using log4j logging.
+2014-12-17 14:09:07 INFO  C3P0Registry:216 - Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2014-12-17 14:09:07 INFO  AbstractPoolBackedDataSource:522 - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@c5f6a53a [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@ddfdcf4d [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hges5d96oc8hiafswbcu|625abb97, idleConnectionTestPeriod -> 0, initialPoolSize -> 1, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 12, maxStatements -> 10, maxStatementsPerConnection -> 0, minPoolSize -> 1, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@f4466fa5 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hges5d96oc8hiafswbcu|1d470d0, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/urlEntry, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hges5d96oc8hiafswbcu|1c6804cd, numHelperThreads -> 3 ]
+2014-12-17 14:09:08 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-12-17 14:09:08 INFO  LobCreatorBuilder:97 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2014-12-17 14:09:08 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2014-12-17 14:09:08 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2014-12-17 14:09:08 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2014-12-17 14:09:08 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2014-12-17 14:09:08 INFO  DatabaseMetaData:147 - HHH000262: Table not found: UrlEntry
+2014-12-17 14:09:08 INFO  DatabaseMetaData:147 - HHH000262: Table not found: UrlEntry
+2014-12-17 14:09:08 INFO  DatabaseMetaData:147 - HHH000262: Table not found: UrlEntry
+2014-12-17 14:09:08 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2014-12-17 14:09:09 WARN  HqlSqlWalker:995 - [DEPRECATION] Encountered positional parameter near line 1, column 55.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2014-12-17 14:09:09 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 26
+2014-12-17 14:09:10 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 25
+2014-12-17 14:09:11 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 24
+2014-12-17 14:09:12 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 23
+2014-12-17 14:09:14 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 22
+2014-12-17 14:09:15 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 21
+2014-12-17 14:09:16 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 20
+2014-12-17 14:09:17 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 19
+2014-12-17 14:09:18 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 18
+2014-12-17 14:09:27 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 17
+2014-12-17 14:09:27 ERROR QueuePriorityAlgorithm:126 - error with getting child urls 
+java.net.UnknownHostException: cypherschoolportal.com
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:439)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:424)
+	at org.jsoup.helper.HttpConnection.execute(HttpConnection.java:178)
+	at org.jsoup.helper.HttpConnection.get(HttpConnection.java:167)
+	at com.hrant.crawler.QueuePriorityAlgorithm.getAllLinksInPage(QueuePriorityAlgorithm.java:175)
+	at com.hrant.crawler.QueuePriorityAlgorithm.queuePriorityAlgorithmLogic(QueuePriorityAlgorithm.java:80)
+	at com.hrant.crawler.QueuePriorityAlgorithm.main(QueuePriorityAlgorithm.java:44)
+2014-12-17 14:09:27 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 16
+2014-12-17 14:09:28 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 15
+2014-12-17 14:09:29 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 14
+2014-12-17 14:09:30 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 13
+2014-12-17 14:09:31 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 12
+2014-12-17 14:09:32 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 11
+2014-12-17 14:09:33 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 10
+2014-12-17 14:09:34 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 9
+2014-12-17 14:09:35 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 8
+2014-12-17 14:09:36 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 7
+2014-12-17 14:09:37 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 6
+2014-12-17 14:09:38 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 5
+2014-12-17 14:09:39 ERROR QueuePriorityAlgorithm:126 - error with getting child urls 
+org.jsoup.HttpStatusException: HTTP error fetching URL. Status=404, URL=http://www.cypherincorporated.co.in/software-products/
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:449)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:424)
+	at org.jsoup.helper.HttpConnection.execute(HttpConnection.java:178)
+	at org.jsoup.helper.HttpConnection.get(HttpConnection.java:167)
+	at com.hrant.crawler.QueuePriorityAlgorithm.getAllLinksInPage(QueuePriorityAlgorithm.java:175)
+	at com.hrant.crawler.QueuePriorityAlgorithm.queuePriorityAlgorithmLogic(QueuePriorityAlgorithm.java:80)
+	at com.hrant.crawler.QueuePriorityAlgorithm.main(QueuePriorityAlgorithm.java:44)
+2014-12-17 14:09:39 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 4
+2014-12-17 14:09:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 3
+2014-12-17 14:09:42 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2
+2014-12-17 14:09:43 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1
+2014-12-17 14:09:47 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 118
+2014-12-17 14:09:47 ERROR QueuePriorityAlgorithm:126 - error with getting child urls 
+org.jsoup.HttpStatusException: HTTP error fetching URL. Status=404, URL=https://play.google.com/store/apps/details?id=com.InkcadreTechnosoft.SnatcherAlien
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:449)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:465)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:424)
+	at org.jsoup.helper.HttpConnection.execute(HttpConnection.java:178)
+	at org.jsoup.helper.HttpConnection.get(HttpConnection.java:167)
+	at com.hrant.crawler.QueuePriorityAlgorithm.getAllLinksInPage(QueuePriorityAlgorithm.java:175)
+	at com.hrant.crawler.QueuePriorityAlgorithm.queuePriorityAlgorithmLogic(QueuePriorityAlgorithm.java:80)
+	at com.hrant.crawler.QueuePriorityAlgorithm.main(QueuePriorityAlgorithm.java:44)
+2014-12-17 14:09:47 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 117
+2014-12-17 14:09:47 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 116
+2014-12-17 14:09:48 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 115
+2014-12-17 14:09:49 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 114
+2014-12-17 14:09:49 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 113
+2014-12-17 14:09:50 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 112
+2014-12-17 14:09:50 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 111
+2014-12-17 14:09:52 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 110
+2014-12-17 14:09:52 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 109
+2014-12-17 14:09:52 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 108
+2014-12-17 14:09:54 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 107
+2014-12-17 14:09:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 106
+2014-12-17 14:09:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 105
+2014-12-17 14:09:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 104
+2014-12-17 14:09:56 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 103
+2014-12-17 14:09:56 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 102
+2014-12-17 14:09:56 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 101
+2014-12-17 14:09:57 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 100
+2014-12-17 14:09:57 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 99
+2014-12-17 14:09:58 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 98
+2014-12-17 14:09:58 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 97
+2014-12-17 14:09:59 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 96
+2014-12-17 14:09:59 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 95
+2014-12-17 14:09:59 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 94
+2014-12-17 14:09:59 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 93
+2014-12-17 14:10:00 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 92
+2014-12-17 14:10:00 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 91
+2014-12-17 14:10:01 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 90
+2014-12-17 14:10:01 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 89
+2014-12-17 14:10:02 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 88
+2014-12-17 14:10:02 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 87
+2014-12-17 14:10:02 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 86
+2014-12-17 14:10:04 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 85
+2014-12-17 14:10:04 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 84
+2014-12-17 14:10:04 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 83
+2014-12-17 14:10:05 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 82
+2014-12-17 14:10:06 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 81
+2014-12-17 14:10:06 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 80
+2014-12-17 14:10:12 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 79
+2014-12-17 14:10:13 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 78
+2014-12-17 14:10:13 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 77
+2014-12-17 14:10:13 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 76
+2014-12-17 14:10:13 ERROR QueuePriorityAlgorithm:126 - error with getting child urls 
+java.net.UnknownHostException: www.giftofdivine.com
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:439)
+	at org.jsoup.helper.HttpConnection$Response.execute(HttpConnection.java:424)
+	at org.jsoup.helper.HttpConnection.execute(HttpConnection.java:178)
+	at org.jsoup.helper.HttpConnection.get(HttpConnection.java:167)
+	at com.hrant.crawler.QueuePriorityAlgorithm.getAllLinksInPage(QueuePriorityAlgorithm.java:175)
+	at com.hrant.crawler.QueuePriorityAlgorithm.queuePriorityAlgorithmLogic(QueuePriorityAlgorithm.java:80)
+	at com.hrant.crawler.QueuePriorityAlgorithm.main(QueuePriorityAlgorithm.java:44)
+2014-12-17 14:10:13 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 75
+2014-12-17 14:10:19 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 74
+2014-12-17 14:10:20 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 73
+2014-12-17 14:10:21 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 72
+2014-12-17 14:10:22 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 71
+2014-12-17 14:10:23 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 70
+2014-12-17 14:10:23 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 69
+2014-12-17 14:10:25 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 68
+2014-12-17 14:10:25 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 67
+2014-12-17 14:10:26 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 66
+2014-12-17 14:10:28 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 65
+2014-12-17 14:10:28 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 64
+2014-12-17 14:10:30 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 63
+2014-12-17 14:10:31 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 62
+2014-12-17 14:10:32 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 61
+2014-12-17 14:10:33 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 60
+2014-12-17 14:10:35 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 59
+2014-12-17 14:10:36 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 58
+2014-12-17 14:10:37 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 57
+2014-12-17 14:10:38 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 56
+2014-12-17 14:10:39 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 55
+2014-12-17 14:10:40 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 54
+2014-12-17 14:10:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 53
+2014-12-17 14:10:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 52
+2014-12-17 14:10:42 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 51
+2014-12-17 14:10:44 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 50
+2014-12-17 14:10:44 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 49
+2014-12-17 14:10:45 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 48
+2014-12-17 14:10:46 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 47
+2014-12-17 14:10:46 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 46
+2014-12-17 14:10:47 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 45
+2014-12-17 14:10:48 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 44
+2014-12-17 14:10:49 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 43
+2014-12-17 14:10:51 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 42
+2014-12-17 14:10:52 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 41
+2014-12-17 14:10:53 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 40
+2014-12-17 14:10:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 39
+2014-12-17 14:10:56 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 38
+2014-12-17 14:10:58 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 37
+2014-12-17 14:10:59 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 36
+2014-12-17 14:11:00 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 35
+2014-12-17 14:11:02 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 34
+2014-12-17 14:11:04 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 33
+2014-12-17 14:11:06 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 32
+2014-12-17 14:11:09 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 31
+2014-12-17 14:11:17 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 30
+2014-12-17 14:11:24 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 29
+2014-12-17 14:11:30 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 28
+2014-12-17 14:11:32 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 27
+2014-12-17 14:11:34 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 26
+2014-12-17 14:11:39 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 25
+2014-12-17 14:11:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 24
+2014-12-17 14:11:44 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 23
+2014-12-17 14:11:47 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 22
+2014-12-17 14:11:49 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 21
+2014-12-17 14:11:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 20
+2014-12-17 14:12:07 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 19
+2014-12-17 14:12:08 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 18
+2014-12-17 14:12:09 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 17
+2014-12-17 14:12:09 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 16
+2014-12-17 14:12:10 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 15
+2014-12-17 14:12:11 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 14
+2014-12-17 14:12:12 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 13
+2014-12-17 14:12:12 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 12
+2014-12-17 14:12:13 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 11
+2014-12-17 14:12:13 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 10
+2014-12-17 14:12:14 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 9
+2014-12-17 14:12:16 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 8
+2014-12-17 14:12:17 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 7
+2014-12-17 14:12:17 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 6
+2014-12-17 14:12:18 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 5
+2014-12-17 14:12:20 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 4
+2014-12-17 14:12:20 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 3
+2014-12-17 14:12:21 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2
+2014-12-17 14:12:21 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1
+2014-12-17 14:12:28 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2014
+2014-12-17 14:12:30 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2013
+2014-12-17 14:12:33 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2012
+2014-12-17 14:12:34 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2011
+2014-12-17 14:12:35 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2010
+2014-12-17 14:12:37 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2009
+2014-12-17 14:12:38 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2008
+2014-12-17 14:12:39 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2007
+2014-12-17 14:12:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2006
+2014-12-17 14:12:42 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2005
+2014-12-17 14:12:43 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2004
+2014-12-17 14:12:44 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2003
+2014-12-17 14:12:46 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2002
+2014-12-17 14:12:49 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2001
+2014-12-17 14:12:50 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 2000
+2014-12-17 14:12:52 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1999
+2014-12-17 14:12:53 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1998
+2014-12-17 14:12:54 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1997
+2014-12-17 14:12:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1996
+2014-12-17 14:12:56 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1995
+2014-12-17 14:13:00 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1994
+2014-12-17 14:13:02 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1993
+2014-12-17 14:13:03 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1992
+2014-12-17 14:13:04 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1991
+2014-12-17 14:13:05 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1990
+2014-12-17 14:13:06 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1989
+2014-12-17 14:13:08 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1988
+2014-12-17 14:13:09 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1987
+2014-12-17 14:13:10 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1986
+2014-12-17 14:13:11 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1985
+2014-12-17 14:13:12 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1984
+2014-12-17 14:13:16 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1983
+2014-12-17 14:13:17 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1982
+2014-12-17 14:13:17 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1981
+2014-12-17 14:13:19 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1980
+2014-12-17 14:13:20 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1979
+2014-12-17 14:13:21 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1978
+2014-12-17 14:13:24 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1977
+2014-12-17 14:13:25 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1976
+2014-12-17 14:13:27 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1975
+2014-12-17 14:13:28 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1974
+2014-12-17 14:13:31 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1973
+2014-12-17 14:13:32 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1972
+2014-12-17 14:13:33 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1971
+2014-12-17 14:13:35 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1970
+2014-12-17 14:13:36 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1969
+2014-12-17 14:13:37 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1968
+2014-12-17 14:13:39 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1967
+2014-12-17 14:13:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1966
+2014-12-17 14:13:41 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1965
+2014-12-17 14:13:42 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1964
+2014-12-17 14:13:46 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1963
+2014-12-17 14:13:47 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1962
+2014-12-17 14:13:48 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1961
+2014-12-17 14:13:49 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1960
+2014-12-17 14:13:51 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1959
+2014-12-17 14:13:52 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1958
+2014-12-17 14:13:53 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1957
+2014-12-17 14:13:55 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1956
+2014-12-17 14:13:56 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1955
+2014-12-17 14:13:57 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1954
+2014-12-17 14:13:58 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1953
+2014-12-17 14:14:00 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1952
+2014-12-17 14:14:02 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1951
+2014-12-17 14:14:03 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1950
+2014-12-17 14:14:04 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1949
+2014-12-17 14:14:05 INFO  QueuePriorityAlgorithm:72 - size of seed urls: 1948

@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 
 import org.apache.commons.lang3.StringUtils;
@@ -31,18 +33,24 @@ import com.hrant.utils.Constants;
 public class QueuePriorityAlgorithm {
 
 	private static final Logger LOGGER = Logger.getLogger(QueuePriorityAlgorithm.class);
+	private ExecutorService fixedThreadPool;
 
 	/*
 	 * Simple testing
 	 */
 	public static void main(String[] args) throws IOException {
 
-		QueuePriorityAlgorithm queuePriorityAlgorithm = new QueuePriorityAlgorithm();
+		QueuePriorityAlgorithm queuePriorityAlgorithm = new QueuePriorityAlgorithm(10);
 
 		LinkedList<String> queue = new LinkedList<>();
 		queue.add("http://www.cypherincorporated.co.in/");
 		queuePriorityAlgorithm.queuePriorityAlgorithmLogic(queue);
 
+	}
+
+	// Constructor
+	public QueuePriorityAlgorithm(int threadCount) {
+		fixedThreadPool = Executors.newFixedThreadPool(threadCount);
 	}
 
 	/*
@@ -67,9 +75,10 @@ public class QueuePriorityAlgorithm {
 
 		// This loop runs, until no new seed was generated
 		while (!seedUrls.isEmpty()) {
-			LOGGER.info("size of seed urls: " + seedUrls.size());
 			// Loop for current seed
 			while (!seedUrls.isEmpty()) {
+				LOGGER.info("size of seed urls: " + seedUrls.size());
+
 				// Extract url from seed
 				UrlEntry currUrlEntry = seedUrls.poll();
 				String currUrl = currUrlEntry.getUrl();
@@ -221,7 +230,7 @@ public class QueuePriorityAlgorithm {
 
 			if (!StringUtils.isEmpty(link)) {
 				// Url is not empty, filter socials and add to set
-				if (!link.contains("facebook") && !link.contains("twitter")) {
+				if (!link.contains("facebook") && !link.contains("twitter") && !link.contains("linkedin")) {
 					linkSet.add(link);
 				}
 			}
