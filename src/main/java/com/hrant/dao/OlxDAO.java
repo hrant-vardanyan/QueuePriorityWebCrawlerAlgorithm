@@ -33,10 +33,10 @@ public class OlxDAO {
 	 * Store UrlEntry object int DB if not exist
 	 */
 	public void addIfNotExist(UrlEntry urlEntry) {
-		String childUrl = urlEntry.getChildUrl();
-		if (!isExist(childUrl, true)) {
+		String url = urlEntry.getUrl();
+		if (!isExist(url)) {
 			try {
-				addMessage(urlEntry);
+				addEntry(urlEntry);
 			} catch (Exception e) {
 				LOGGER.error("error with stroing object into DB ", e);
 			}
@@ -47,7 +47,7 @@ public class OlxDAO {
 	/*
 	 * Entry Saver
 	 */
-	private void addMessage(UrlEntry urlEntry) {
+	private void addEntry(UrlEntry urlEntry) {
 		EntityManager entityManager = null;
 		try {
 			// Open connection and save entity
@@ -65,19 +65,14 @@ public class OlxDAO {
 	/*
 	 * Check if childUrl exist in DB to avoid duplicates
 	 */
-	public boolean isExist(String checkingUrl, boolean isChild) {
+	public boolean isExist(String checkingUrl) {
 		EntityManager entityManager = null;
 		try {
 			entityManager = JpaUtil.getEMF().createEntityManager();
 			entityManager.getTransaction().begin();
-			// queryPart created for checking to get parentUrl or childUrl field
-			// from DB
-			String queryPart = "parentUrl";
-			if (isChild) {
-				queryPart = "childUrl";
-			}
-			TypedQuery<UrlEntry> query = entityManager.createQuery("SELECT c FROM UrlEntry c WHERE c." + queryPart
-					+ " = ? ", UrlEntry.class);
+
+			TypedQuery<UrlEntry> query = entityManager.createQuery("SELECT c FROM UrlEntry c WHERE c.url= ? ",
+					UrlEntry.class);
 			query.setParameter(1, checkingUrl);
 			List<UrlEntry> resultList = query.getResultList();
 			entityManager.getTransaction().commit();
