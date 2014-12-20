@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 
 import org.apache.commons.lang3.StringUtils;
@@ -75,18 +77,22 @@ public class QueuePriorityAlgorithm {
 
 		// This loop runs, until no new seed was generated
 		while (!seedUrls.isEmpty()) {
-			// Loop for current seed
+			// Read seed url
+			// Create a Memory for Seed_URL to Store the score in it.
 			while (!seedUrls.isEmpty()) {
 				LOGGER.info("size of seed urls: " + seedUrls.size());
 
-				// Extract url from seed
-				UrlEntry currUrlEntry = seedUrls.poll();
-				String currUrl = currUrlEntry.getUrl();
+				// currSeedUrlEntry is object that holds url, parent url and score
+				// currSeedUrl is actual seed url
+				UrlEntry currSeedUrlEntry = seedUrls.poll();
+				String currSeedUrl = currSeedUrlEntry.getUrl();
 				// Extract domain
-				String domain = getDomain(currUrl);
+				String domain = getDomain(currSeedUrl);
 				try {
+					// Fetch Seed_URL
+					
 					// Get children urls
-					Set<String> allLinksInPage = getAllLinksInPage(currUrl);
+					Set<String> allLinksInPage = getAllLinksInPage(currSeedUrl);
 					// Child urls with scores will be stored here
 					LinkedList<UrlEntry> fetchedList = new LinkedList<>();
 					// Will be used for computing score for parent url (currUrl)
@@ -101,22 +107,27 @@ public class QueuePriorityAlgorithm {
 						}
 
 						// Create child url
-						UrlEntry urlEntryChild = new UrlEntry();
+						UrlEntry childUrlEntry = new UrlEntry();
 
-						// Pass score according to inter/intra
+						// Separate fetched URLs into two types
+						// Separate Seed_URL score into two parts
+						// For child url, it is checked is he inter or intra,
+						// And score is assigned accordingly
 						double score = 0.33333333;
 						boolean isInter = false;
 						if (!currentChildUrl.contains(domain)) {
 							score = 0.66666666;
 							isInter = true;
 						}
-						urlEntryChild.setInter(isInter);
-						urlEntryChild.setScore(score);
-						urlEntryChild.setUrl(currentChildUrl);
-						urlEntryChild.setParent(currUrl);
+						
+						// Finish UrlEntry object creation for child
+						childUrlEntry.setInter(isInter);
+						childUrlEntry.setScore(score);
+						childUrlEntry.setUrl(currentChildUrl);
+						childUrlEntry.setParent(currSeedUrl);
 
 						// Add to fetched list
-						fetchedList.add(urlEntryChild);
+						fetchedList.add(childUrlEntry);
 
 						// Add child score to all children score
 						sumChildScore += score;
@@ -124,13 +135,14 @@ public class QueuePriorityAlgorithm {
 
 					// Compute parent score according to 10.a (11.a)
 					// This score will be used by PriorityQueue to sort parents
-					double tempParentScore = sumChildScore / currUrlEntry.getScore();
+					double tempParentScore = sumChildScore / currSeedUrlEntry.getScore();
 
 					// Set score and children to parent url
-					currUrlEntry.setScore(tempParentScore);
-					currUrlEntry.setChildren(fetchedList);
+					currSeedUrlEntry.setScore(tempParentScore);
+					currSeedUrlEntry.setChildren(fetchedList);
 
-					priorityQueue.add(currUrlEntry);
+					// Store url in priorit queue, sorted by its current score
+					priorityQueue.add(currSeedUrlEntry);
 				} catch (IOException e) {
 					LOGGER.error("error with getting child urls ", e);
 				}
@@ -138,10 +150,11 @@ public class QueuePriorityAlgorithm {
 
 			// Extract urls from priority queue
 			while (!priorityQueue.isEmpty()) {
+				// Get parent url and his children from priority queue
 				UrlEntry parentUrlEntry = priorityQueue.poll();
 				LinkedList<UrlEntry> childUrlEntries = parentUrlEntry.getChildren();
 
-				// Computing final score for parent
+				// Computing final score for parent according to 12.a(b)
 				double intraSum = 0;
 				double interSum = 0;
 				int intraCount = 0;
@@ -160,7 +173,7 @@ public class QueuePriorityAlgorithm {
 					seedUrls.add(childUrlEntry);
 				}
 
-				// Compute parent score
+				// Compute parent score according to 12.a(b)
 				parentUrlEntry.setScore(interCount * interSum + intraCount * intraSum);
 				parentUrlEntry.setChildren(null);
 
@@ -194,7 +207,7 @@ public class QueuePriorityAlgorithm {
 		}
 
 		String domain = getDomain(pageUrl);
-		// Extarct protocol
+		// Extract protocol
 		String protocol = StringUtils.substringBefore(pageUrl, "//");
 
 		// Get all 'a' tags
@@ -222,11 +235,6 @@ public class QueuePriorityAlgorithm {
 					}
 				}
 			}
-
-			// Add '/' at the end if not exist
-			// if (!link.endsWith("/") && !StringUtils.isEmpty(link)) {
-			// link = link + "/";
-			// }
 
 			if (!StringUtils.isEmpty(link)) {
 				// Url is not empty, filter socials and add to set
@@ -267,6 +275,37 @@ public class QueuePriorityAlgorithm {
 		}
 
 		return linkList;
+	}
+
+	/*
+	 * Multitread method for crawling
+	 */
+	private Set<String> getUrls(List<String> urlList) {
+
+		final Set<String> urls = Collections.synchronizedSet(new HashSet<String>());
+		for (final String currentUrl : urls) {
+
+			fixedThreadPool.submit(new Runnable() {
+				public void run() {
+
+					try {
+						Set<String> allLinksOnePage = getAllLinksInPage(currentUrl);
+						urls.addAll(allLinksOnePage);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			});
+
+			fixedThreadPool.shutdown();
+			try {
+				fixedThreadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return urls;
 	}
 
 	private String getDomain(String url) {
