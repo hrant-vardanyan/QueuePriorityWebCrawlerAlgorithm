@@ -92,7 +92,7 @@ public class QueuePriorityAlgorithm {
 					// Fetch Seed_URL
 					
 					// Get children urls
-					Set<String> allLinksInPage = getAllLinksInPage(currSeedUrl);
+					Set<String> childUrls = getAllLinksInPage(currSeedUrl);
 					// Child urls with scores will be stored here
 					LinkedList<UrlEntry> fetchedList = new LinkedList<>();
 					// Will be used for computing score for parent url (currUrl)
@@ -100,7 +100,7 @@ public class QueuePriorityAlgorithm {
 					double sumChildScore = 0;
 
 					// For every child
-					for (String currentChildUrl : allLinksInPage) {
+					for (String currentChildUrl : childUrls) {
 						// Check if child url was already scrapped
 						if (!used.add(currentChildUrl)) {
 							continue;
