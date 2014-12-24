@@ -14,6 +14,9 @@ public class JpaUtil {
 	private static final Logger LOG = LoggerFactory.getLogger(JpaUtil.class);
 
 	private static final EntityManagerFactory emf;
+	
+	
+	
 	static {
 		try {
 			emf = Persistence.createEntityManagerFactory("urlEntry");
