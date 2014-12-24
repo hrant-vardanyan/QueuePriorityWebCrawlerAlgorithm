@@ -48,7 +48,7 @@ public class QueuePriorityAlgorithm {
 		QueuePriorityAlgorithm queuePriorityAlgorithm = new QueuePriorityAlgorithm(10);
 
 		LinkedList<String> queue = new LinkedList<>();
-		queue.add("http://antares.am/");
+		queue.add("http://www.cypherincorporated.co.in/");
 		queuePriorityAlgorithm.queuePriorityAlgorithmLogic(queue);
 
 	}
@@ -309,7 +309,7 @@ public class QueuePriorityAlgorithm {
 	 * Shows at which url is in seedUrls
 	 */
 	private void showCurrentStateOfProcess() {
-		LOGGER.info("at" + currentNumberOfState);
+		LOGGER.info("at " + currentNumberOfState);
 		currentNumberOfState--;
 	}
 
