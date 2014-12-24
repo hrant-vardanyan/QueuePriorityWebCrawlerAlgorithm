@@ -37,6 +37,8 @@ public class QueuePriorityAlgorithm {
 
 	private Set<String> used;
 	private PriorityBlockingQueue<UrlEntry> priorityQueue;
+	private int countOfThreads;
+	private int currentNumberOfState;
 
 	/*
 	 * Simple testing
@@ -46,14 +48,14 @@ public class QueuePriorityAlgorithm {
 		QueuePriorityAlgorithm queuePriorityAlgorithm = new QueuePriorityAlgorithm(10);
 
 		LinkedList<String> queue = new LinkedList<>();
-		queue.add("http://www.cypherincorporated.co.in/");
+		queue.add("http://antares.am/");
 		queuePriorityAlgorithm.queuePriorityAlgorithmLogic(queue);
 
 	}
 
 	// Constructor
 	public QueuePriorityAlgorithm(int threadCount) {
-
+		this.countOfThreads = threadCount;
 	}
 
 	/*
@@ -77,8 +79,8 @@ public class QueuePriorityAlgorithm {
 
 		// This loop runs, until no new seed was generated
 		while (!seedUrls.isEmpty()) {
+			// Multithread method for sending requests fastly
 			getUrls(seedUrls);
-			LOGGER.info("I assume you've finished the tasks");
 
 			// Extract urls from priority queue
 			while (!priorityQueue.isEmpty()) {
@@ -125,6 +127,7 @@ public class QueuePriorityAlgorithm {
 	 * Gets all urls from page
 	 */
 	private Set<String> getAllLinksInPage(String pageUrl) throws IOException {
+		showCurrentStateOfProcess();
 		// Get page data
 		Document docOfPage = Jsoup.connect(pageUrl).ignoreContentType(true).userAgent(Constants.BROWSER)
 				.timeout(Constants.TIMEOUT).get();
@@ -215,19 +218,22 @@ public class QueuePriorityAlgorithm {
 	 */
 	private synchronized void getUrls(final LinkedList<UrlEntry> seedUrls) {
 
-		ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
-
+		// Executor service - set the count of threads
+		ExecutorService fixedThreadPool = Executors.newFixedThreadPool(this.countOfThreads);
+		currentNumberOfState = seedUrls.size();
+		LOGGER.info("size of seed urls: " + seedUrls.size());
 		while (!seedUrls.isEmpty()) {
-			LOGGER.info("size of seed urls: " + seedUrls.size());
+			// Get and remove url from the seed
 			final UrlEntry currSeedUrlEntry = seedUrls.poll();
 			final String currSeedUrl = currSeedUrlEntry.getUrl();
 			// Extract domain
 			final String domain = getDomain(currSeedUrl);
 
+			// subitted threads
 			fixedThreadPool.submit(new Runnable() {
 				public void run() {
 					try {
-
+						// sending request and getting child urls
 						Set<String> childUrls = getAllLinksInPage(currSeedUrl);
 						LinkedList<UrlEntry> fetchedList = new LinkedList<>();
 						// Will be used for computing score for parent url
@@ -289,16 +295,27 @@ public class QueuePriorityAlgorithm {
 			});
 
 		}
+		// shutdown threads
 		fixedThreadPool.shutdown();
-
 		try {
 			fixedThreadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			LOGGER.error("error with terminating thread", e);
 		}
 
 	}
 
+	/*
+	 * Shows at which url is in seedUrls
+	 */
+	private void showCurrentStateOfProcess() {
+		LOGGER.info("at" + currentNumberOfState);
+		currentNumberOfState--;
+	}
+
+	/*
+	 * Method for extracting
+	 */
 	private String getDomain(String url) {
 
 		String domain = "";
