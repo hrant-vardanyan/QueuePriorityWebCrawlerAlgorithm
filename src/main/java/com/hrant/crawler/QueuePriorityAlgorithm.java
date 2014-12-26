@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -45,10 +46,9 @@ public class QueuePriorityAlgorithm {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		QueuePriorityAlgorithm queuePriorityAlgorithm = new QueuePriorityAlgorithm(10);
-
+		QueuePriorityAlgorithm queuePriorityAlgorithm = new QueuePriorityAlgorithm(20);
 		LinkedList<String> queue = new LinkedList<>();
-		queue.add("http://www.cypherincorporated.co.in/");
+		queue.add("http://antares.am/");
 		queuePriorityAlgorithm.queuePriorityAlgorithmLogic(queue);
 
 	}
@@ -86,6 +86,15 @@ public class QueuePriorityAlgorithm {
 			while (!priorityQueue.isEmpty()) {
 				// Get parent url and his children from priority queue
 				UrlEntry parentUrlEntry = priorityQueue.poll();
+				Date addingTime = parentUrlEntry.getAddingTime();
+				Date removingTime = new Date();
+				parentUrlEntry.setRemovingTime(removingTime);
+				// count difference between adding and removing time
+				long dif = removingTime.getTime() - addingTime.getTime();
+				// dif time parse to minutes
+				double totalStay = dif / 1000 % 60;  ;
+				parentUrlEntry.setTotalStay(totalStay);
+
 				LinkedList<UrlEntry> childUrlEntries = parentUrlEntry.getChildren();
 
 				// Computing final score for parent according to 12.a(b)
@@ -108,8 +117,10 @@ public class QueuePriorityAlgorithm {
 				}
 
 				// Compute parent score according to 12.a(b)
-				parentUrlEntry.setScore(interCount * interSum + intraCount * intraSum);
+				parentUrlEntry.setScore((interCount + intraCount) * parentUrlEntry.getScore());
 				parentUrlEntry.setChildren(null);
+				parentUrlEntry.setCountOfInter(interCount);
+				parentUrlEntry.setCountOfIntra(intraCount);
 
 				// Save parent in database
 				try {
@@ -287,6 +298,8 @@ public class QueuePriorityAlgorithm {
 
 						// Store url in priorit queue, sorted by its current
 						// score
+						Date addingTime = new Date();
+						currSeedUrlEntry.setAddingTime(addingTime);
 						priorityQueue.add(currSeedUrlEntry);
 					} catch (IOException e) {
 						LOGGER.error("error ", e);

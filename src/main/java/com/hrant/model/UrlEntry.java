@@ -1,5 +1,6 @@
 package com.hrant.model;
 
+import java.util.Date;
 import java.util.LinkedList;
 
 import javax.persistence.Entity;
@@ -22,6 +23,11 @@ public class UrlEntry {
 	private double score;
 	private boolean isInter;
 	private String parent;
+	private int countOfInter;
+	private int countOfIntra;
+	private Date addingTime;
+	private Date removingTime;
+	private double totalStay;
 	@Transient
 	private LinkedList<UrlEntry> children;
 
@@ -36,8 +42,6 @@ public class UrlEntry {
 	public String getUrl() {
 		return url;
 	}
-	
-	
 
 	public void setUrl(String url) {
 		this.url = url;
@@ -73,6 +77,46 @@ public class UrlEntry {
 
 	public void setChildren(LinkedList<UrlEntry> children) {
 		this.children = children;
+	}
+
+	public Date getAddingTime() {
+		return addingTime;
+	}
+
+	public void setAddingTime(Date addingTime) {
+		this.addingTime = addingTime;
+	}
+
+	public Date getRemovingTime() {
+		return removingTime;
+	}
+
+	public void setRemovingTime(Date removingTime) {
+		this.removingTime = removingTime;
+	}
+
+	public double getTotalStay() {
+		return totalStay;
+	}
+
+	public void setTotalStay(double totalStay) {
+		this.totalStay = totalStay;
+	}
+
+	public int getCountOfInter() {
+		return countOfInter;
+	}
+
+	public void setCountOfInter(int countOfInter) {
+		this.countOfInter = countOfInter;
+	}
+
+	public int getCountOfIntra() {
+		return countOfIntra;
+	}
+
+	public void setCountOfIntra(int countOfIntra) {
+		this.countOfIntra = countOfIntra;
 	}
 
 }
